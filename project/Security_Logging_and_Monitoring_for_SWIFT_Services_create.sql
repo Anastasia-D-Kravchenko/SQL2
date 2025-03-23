@@ -23,7 +23,7 @@ CREATE TABLE Activity (
 -- Table: All_MessageType
 CREATE TABLE All_MessageType (
     id integer  NOT NULL,
-    MessageType varchar2(10)  NOT NULL,
+    MessageType varchar2(20)  NOT NULL,
     Category_id integer  NOT NULL,
     Description varchar2(255)  NOT NULL,
     StandardVersion varchar2(20)  NOT NULL,

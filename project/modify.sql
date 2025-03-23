@@ -17,7 +17,7 @@ UPDATE All_MessageType SET VersionDate = TO_DATE('2023-12-31', 'YYYY-MM-DD') WHE
 
 -- BIC_Directory Table Modifications
 ALTER TABLE BIC_Directory ADD City VARCHAR2(255);
-SELECT BIC FROM BIC_Directory WHERE NOT REGEXP_LIKE(BIC, '^[A-Z]{6}[A-Z0-9]{2}([A-Z0-9]{3})?$';
+SELECT BIC FROM BIC_Directory WHERE NOT REGEXP_LIKE(BIC, '^[A-Z]{6}[A-Z0-9]{2}([A-Z0-9]{3})?$');
 
 -- ColorCode Table Modifications
 ALTER TABLE ColorCode ADD RGB VARCHAR2(10);

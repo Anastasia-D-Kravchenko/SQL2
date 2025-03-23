@@ -1,469 +1,403 @@
--- Table: Access_Control_List
-INSERT INTO Access_Control_List (id, "Resource", Permission) VALUES
-(1, 'TransactionQueue', 1),
-(2, 'SystemSettings', 2),
-(3, 'ReportGeneration', 1),
-(4, 'UserManagement', 2),
-(5, 'MessageValidation', 1),
-(6, 'TransactionReports', 1),
-(7, 'SystemLogs', 2),
-(8, 'UserLogs', 2),
-(9, 'Configuration', 2),
-(10, 'MessageRepair', 1);
+INSERT INTO Access_Control_List (id, "Resource", Permission) VALUES (1, 'TransactionQueue', 1);
+INSERT INTO Access_Control_List (id, "Resource", Permission) VALUES (2, 'SystemSettings', 2);
+INSERT INTO Access_Control_List (id, "Resource", Permission) VALUES (3, 'ReportGeneration', 1);
+INSERT INTO Access_Control_List (id, "Resource", Permission) VALUES (4, 'UserManagement', 2);
+INSERT INTO Access_Control_List (id, "Resource", Permission) VALUES (5, 'MessageValidation', 1);
+INSERT INTO Access_Control_List (id, "Resource", Permission) VALUES (6, 'TransactionReports', 1);
+INSERT INTO Access_Control_List (id, "Resource", Permission) VALUES (7, 'SystemLogs', 2);
+INSERT INTO Access_Control_List (id, "Resource", Permission) VALUES (8, 'UserLogs', 2);
+INSERT INTO Access_Control_List (id, "Resource", Permission) VALUES (9, 'Configuration', 2);
+INSERT INTO Access_Control_List (id, "Resource", Permission) VALUES (10, 'MessageRepair', 1);
 
--- Table: Activity
-INSERT INTO Activity (id, Timestamp, Type, ResourceAccessed, SourceIP) VALUES
-(1, '2025-03-23 10:00:00', 'Login', 'UI', '192.168.1.100'),
-(2, '2025-03-23 10:05:00', 'TransactionApproval', 'TransactionQueue', '192.168.1.101'),
-(3, '2025-03-23 10:10:00', 'ReportGeneration', 'ReportGenerator', '192.168.1.102'),
-(4, '2025-03-23 10:15:00', 'ConfigurationChange', 'SystemSettings', '192.168.1.103'),
-(5, '2025-03-23 10:20:00', 'MessageValidation', 'ValidationService', '192.168.1.104'),
-(6, '2025-03-23 10:25:00', 'TransactionQuery', 'TransactionReports', '192.168.1.105'),
-(7, '2025-03-23 10:30:00', 'SystemLogView', 'SystemLogs', '192.168.1.106'),
-(8, '2025-03-23 10:35:00', 'UserLogView', 'UserLogs', '192.168.1.107'),
-(9, '2025-03-23 10:40:00', 'ConfigurationView', 'Configuration', '192.168.1.108'),
-(10, '2025-03-23 10:45:00', 'MessageRepair', 'MessageRepairTool', '192.168.1.109');
+INSERT INTO Activity(id,Timestamp,Type,ResourceAccessed,SourceIP)VALUES(1,TO_TIMESTAMP('2025-03-23 10:00:00','YYYY-MM-DD HH24:MI:SS'),'Login','UI','192.168.1.100');
+INSERT INTO Activity(id,Timestamp,Type,ResourceAccessed,SourceIP)VALUES(2,TO_TIMESTAMP('2025-03-23 10:05:00','YYYY-MM-DD HH24:MI:SS'),'TransactionApproval','TransactionQueue','192.168.1.101');
+INSERT INTO Activity(id,Timestamp,Type,ResourceAccessed,SourceIP)VALUES(3,TO_TIMESTAMP('2025-03-23 10:10:00','YYYY-MM-DD HH24:MI:SS'),'ReportGeneration','ReportGenerator','192.168.1.102');
+INSERT INTO Activity(id,Timestamp,Type,ResourceAccessed,SourceIP)VALUES(4,TO_TIMESTAMP('2025-03-23 10:15:00','YYYY-MM-DD HH24:MI:SS'),'ConfigurationChange','SystemSettings','192.168.1.103');
+INSERT INTO Activity(id,Timestamp,Type,ResourceAccessed,SourceIP)VALUES(5,TO_TIMESTAMP('2025-03-23 10:20:00','YYYY-MM-DD HH24:MI:SS'),'MessageValidation','ValidationService','192.168.1.104');
+INSERT INTO Activity(id,Timestamp,Type,ResourceAccessed,SourceIP)VALUES(6,TO_TIMESTAMP('2025-03-23 10:25:00','YYYY-MM-DD HH24:MI:SS'),'TransactionQuery','TransactionReports','192.168.1.105');
+INSERT INTO Activity(id,Timestamp,Type,ResourceAccessed,SourceIP)VALUES(7,TO_TIMESTAMP('2025-03-23 10:30:00','YYYY-MM-DD HH24:MI:SS'),'SystemLogView','SystemLogs','192.168.1.106');
+INSERT INTO Activity(id,Timestamp,Type,ResourceAccessed,SourceIP)VALUES(8,TO_TIMESTAMP('2025-03-23 10:35:00','YYYY-MM-DD HH24:MI:SS'),'UserLogView','UserLogs','192.168.1.107');
+INSERT INTO Activity(id,Timestamp,Type,ResourceAccessed,SourceIP)VALUES(9,TO_TIMESTAMP('2025-03-23 10:40:00','YYYY-MM-DD HH24:MI:SS'),'ConfigurationView','Configuration','192.168.1.108');
+INSERT INTO Activity(id,Timestamp,Type,ResourceAccessed,SourceIP)VALUES(10,TO_TIMESTAMP('2025-03-23 10:45:00','YYYY-MM-DD HH24:MI:SS'),'MessageRepair','MessageRepairTool','192.168.1.109');
 
--- Table: All_MessageType
-INSERT INTO All_MessageType (id, MessageType, Category_id, Description, StandardVersion, DocumentationLink) VALUES
-(1, 'MT103', 1, 'Single Customer Credit Transfer', '2023', 'http://example.com/mt103'),
-(2, 'MT202', 2, 'General Financial Institution Transfer', '2023', 'http://example.com/mt202'),
-(3, 'MX_pain.001.001.03', 3, 'Customer Credit Transfer Initiation', '2023', 'http://example.com/mx_pain'),
-(4, 'MT940', 1, 'Customer Statement Message', '2023', 'http://example.com/mt940'),
-(5, 'MT950', 1, 'Statement Message', '2023', 'http://example.com/mt950'),
-(6, 'MT101', 1, 'Request for Transfer', '2023', 'http://example.com/mt101'),
-(7, 'MT200', 2, 'Financial Institution Transfer for its own account', '2023', 'http://example.com/mt200'),
-(8, 'MX_camt.053.001.02', 3, 'Bank to Customer Statement', '2023', 'http://example.com/mx_camt'),
-(9, 'MT540', 5, 'Receive Free of Payment', '2023', 'http://example.com/mt540'),
-(10, 'MT542', 5, 'Deliver Free of Payment', '2023', 'http://example.com/mt542');
+INSERT INTO Category (id, Category) VALUES (1, 'Payments');
+INSERT INTO Category (id, Category) VALUES (2, 'Treasury');
+INSERT INTO Category (id, Category) VALUES (3, 'Cash Management');
+INSERT INTO Category (id, Category) VALUES (4, 'Trade Services');
+INSERT INTO Category (id, Category) VALUES (5, 'Securities');
+INSERT INTO Category (id, Category) VALUES (6, 'Syndication');
+INSERT INTO Category (id, Category) VALUES (7, 'Documentary Credits');
+INSERT INTO Category (id, Category) VALUES (8, 'Travellers Cheques');
+INSERT INTO Category (id, Category) VALUES (9, 'Cash Letters');
+INSERT INTO Category (id, Category) VALUES (10, 'General');
 
--- Table: BIC_Directory
-INSERT INTO BIC_Directory (BIC, InstitutionName, Country) VALUES
-('BANKUS33', 'Global Bank USA', 'US'),
-('BANKGB2L', 'Global Bank UK', 'GB'),
-('BANKFR1A', 'Global Bank France', 'FR'),
-('BANKDEFF', 'Global Bank Germany', 'DE'),
-('BANKJPJT', 'Global Bank Japan', 'JP'),
-('BANKCACT', 'Global Bank Canada', 'CA'),
-('BANKAUBB', 'Global Bank Australia', 'AU'),
-('BANKCHZZ', 'Global Bank Switzerland', 'CH'),
-('BANKCNBJ', 'Global Bank China', 'CN'),
-('BANKINBB', 'Global Bank India', 'IN');
+ALTER TABLE All_MessageType MODIFY (MessageType varchar2(20));
 
--- Table: Category
-INSERT INTO Category (id, Category) VALUES
-(1, 'Payments'),
-(2, 'Treasury'),
-(3, 'Cash Management'),
-(4, 'Trade Services'),
-(5, 'Securities'),
-(6, 'Syndication'),
-(7, 'Documentary Credits'),
-(8, 'Travellers Cheques'),
-(9, 'Cash Letters'),
-(10, 'General');
+INSERT INTO All_MessageType (id, MessageType, Category_id, Description, StandardVersion, DocumentationLink) VALUES (1, 'MT103', 1, 'Single Customer Credit Transfer', '2023', 'http://example.com/mt103');
+INSERT INTO All_MessageType (id, MessageType, Category_id, Description, StandardVersion, DocumentationLink) VALUES (2, 'MT202', 2, 'General Financial Institution Transfer', '2023', 'http://example.com/mt202');
+INSERT INTO All_MessageType (id, MessageType, Category_id, Description, StandardVersion, DocumentationLink) VALUES (3, 'MX_pain.001.001.03', 3, 'Customer Credit Transfer Initiation', '2023', 'http://example.com/mx_pain');
+INSERT INTO All_MessageType (id, MessageType, Category_id, Description, StandardVersion, DocumentationLink) VALUES (4, 'MT940', 1, 'Customer Statement Message', '2023', 'http://example.com/mt940');
+INSERT INTO All_MessageType (id, MessageType, Category_id, Description, StandardVersion, DocumentationLink) VALUES (5, 'MT950', 1, 'Statement Message', '2023', 'http://example.com/mt950');
+INSERT INTO All_MessageType (id, MessageType, Category_id, Description, StandardVersion, DocumentationLink) VALUES (6, 'MT101', 1, 'Request for Transfer', '2023', 'http://example.com/mt101');
+INSERT INTO All_MessageType (id, MessageType, Category_id, Description, StandardVersion, DocumentationLink) VALUES (7, 'MT200', 2, 'Financial Institution Transfer for its own account', '2023', 'http://example.com/mt200');
+INSERT INTO All_MessageType (id, MessageType, Category_id, Description, StandardVersion, DocumentationLink) VALUES (8, 'MX_camt.053.001.02', 3, 'Bank to Customer Statement', '2023', 'http://example.com/mx_camt');
+INSERT INTO All_MessageType (id, MessageType, Category_id, Description, StandardVersion, DocumentationLink) VALUES (9, 'MT540', 5, 'Receive Free of Payment', '2023', 'http://example.com/mt540');
+INSERT INTO All_MessageType (id, MessageType, Category_id, Description, StandardVersion, DocumentationLink) VALUES (10, 'MT542', 5, 'Deliver Free of Payment', '2023', 'http://example.com/mt542');
 
--- Table: ColorCode
-INSERT INTO ColorCode (id, ColorCode) VALUES
-(1, 'Red'),
-(2, 'Green'),
-(3, 'Yellow'),
-(4, 'Blue'),
-(5, 'Orange'),
-(6, 'Purple'),
-(7, 'Gray'),
-(8, 'Cyan'),
-(9, 'Magenta'),
-(10, 'Brown');
+INSERT INTO BIC_Directory (BIC, InstitutionName, Country) VALUES ('BANKUS33', 'Global Bank USA', 'US');
+INSERT INTO BIC_Directory (BIC, InstitutionName, Country) VALUES ('BANKGB2L', 'Global Bank UK', 'GB');
+INSERT INTO BIC_Directory (BIC, InstitutionName, Country) VALUES ('BANKFR1A', 'Global Bank France', 'FR');
+INSERT INTO BIC_Directory (BIC, InstitutionName, Country) VALUES ('BANKDEFF', 'Global Bank Germany', 'DE');
+INSERT INTO BIC_Directory (BIC, InstitutionName, Country) VALUES ('BANKJPJT', 'Global Bank Japan', 'JP');
+INSERT INTO BIC_Directory (BIC, InstitutionName, Country) VALUES ('BANKCACT', 'Global Bank Canada', 'CA');
+INSERT INTO BIC_Directory (BIC, InstitutionName, Country) VALUES ('BANKAUBB', 'Global Bank Australia', 'AU');
+INSERT INTO BIC_Directory (BIC, InstitutionName, Country) VALUES ('BANKCHZZ', 'Global Bank Switzerland', 'CH');
+INSERT INTO BIC_Directory (BIC, InstitutionName, Country) VALUES ('BANKCNBJ', 'Global Bank China', 'CN');
+INSERT INTO BIC_Directory (BIC, InstitutionName, Country) VALUES ('BANKINBB', 'Global Bank India', 'IN');
 
--- Table: Component
-INSERT INTO Component (id, Name, Type, Description, Version, Vendor, InstallationDate, LastUpdated, Configuration) VALUES
-(1, 'Alliance Access', 'Software', 'SWIFT messaging interface', '7.4', 'SWIFT', '2023-01-15', '2023-06-20', '<config><interface>TCP/IP</interface></config>'),
-(2, 'HSM', 'Hardware', 'Hardware Security Module', 'v3.2', 'Thales', '2022-12-01', '2023-03-10', '<config><keyLength>2048</keyLength></config>'),
-(3, 'Messaging Gateway', 'Software', 'Message routing service', '1.5', 'In-house', '2023-02-28', '2023-07-15', '<config><routing>XML</routing></config>'),
-(4, 'Database Server', 'Software', 'Database for SWIFT data', 'MySQL 8.0', 'Oracle', '2022-11-10', '2023-08-01', '<config><database>SWIFT_DB</database></config>'),
-(5, 'User Interface', 'Software', 'Web-based UI', '2.0', 'In-house', '2023-03-05', '2023-09-02', '<config><framework>React</framework></config>'),
-(6, 'Validation Service', 'Software', 'Message validation service', '1.2', 'In-house', '2023-04-10', '2023-10-10', '<config><rules>MFVR</rules></config>'),
-(7, 'Report Generator', 'Software', 'Reporting tool', '1.3', 'In-house', '2023-05-15', '2023-11-15', '<config><format>PDF</format></config>'),
-(8, 'Message Repair Tool', 'Software', 'Message editing tool', '1.1', 'In-house', '2023-06-20', '2023-12-20', '<config><features>Edit</features></config>'),
-(9, 'Logging Service', 'Software', 'System logging service', '1.4', 'In-house', '2023-07-25', '2024-01-25', '<config><level>Info</level></config>'),
-(10, 'Security Module', 'Software', 'Security related services', '2.1', 'In-house', '2023-08-30', '2024-02-28', '<config><authentication>OAuth2</authentication></config>');
+INSERT INTO ColorCode (id, ColorCode) VALUES (1, 'Red');
+INSERT INTO ColorCode (id, ColorCode) VALUES (2, 'Green');
+INSERT INTO ColorCode (id, ColorCode) VALUES (3, 'Yellow');
+INSERT INTO ColorCode (id, ColorCode) VALUES (4, 'Blue');
+INSERT INTO ColorCode (id, ColorCode) VALUES (5, 'Orange');
+INSERT INTO ColorCode (id, ColorCode) VALUES (6, 'Purple');
+INSERT INTO ColorCode (id, ColorCode) VALUES (7, 'Gray');
+INSERT INTO ColorCode (id, ColorCode) VALUES (8, 'Cyan');
+INSERT INTO ColorCode (id, ColorCode) VALUES (9, 'Magenta');
+INSERT INTO ColorCode (id, ColorCode) VALUES (10, 'Brown');
 
--- Table: Correlation_Repository
-INSERT INTO Correlation_Repository (id, Transaction_id, Timestamp, MessageDetails, DomainName_id, Direction_id, ColorCode_id, Status_id) VALUES
-(1, 1, '2025-03-23 10:00:00', 'MT103 transaction', 1, 1, 2, 2),
-(2, 2, '2025-03-23 10:05:00', 'MT202 transaction', 1, 2, 3, 3),
-(3, 3, '2025-03-23 10:10:00', 'MX transaction', 2, 1, 1, 1),
-(4, 4, '2025-03-23 10:15:00', 'MT940 transaction', 1, 2, 2, 2),
-(5, 5, '2025-03-23 10:20:00', 'MT950 transaction', 1, 1, 3, 3),
-(6, 6, '2025-03-23 10:25:00', 'MT101 transaction', 1, 2, 1, 1),
-(7, 7, '2025-03-23 10:30:00', 'MT200 transaction', 2, 1, 2, 2),
-(8, 8, '2025-03-23 10:35:00', 'MX camt transaction', 2, 2, 3, 3),
-(9, 9, '2025-03-23 10:40:00', 'MT540 transaction', 3, 1, 1, 1),
-(10, 10, '2025-03-23 10:45:00', 'MT542 transaction', 3, 2, 2, 2);
+ALTER TABLE Component MODIFY (Configuration DEFAULT XMLType('<config/><interface/>'));
 
--- Table: Currency
-INSERT INTO Currency (id, Currency) VALUES
-(1, 'USD'),
-(2, 'EUR'),
-(3, 'GBP'),
-(4, 'JPY'),
-(5, 'CAD'),
-(6, 'AUD'),
-(7, 'CHF'),
-(8, 'CNY'),
-(9, 'INR'),
-(10, 'SGD');
+INSERT INTO Component (id, Name, Type, Description, Version, Vendor, InstallationDate, LastUpdated, Configuration) VALUES (1, 'Alliance Access', 'Software', 'SWIFT messaging interface', '7.4', 'SWIFT', TO_DATE('2023-01-15', 'YYYY-MM-DD'), TO_DATE('2023-06-20', 'YYYY-MM-DD'), XMLType('<config><interface>TCP/IP</interface></config>'));
+INSERT INTO Component(id,Name,Type,Description,Version,Vendor,InstallationDate,LastUpdated,Configuration)VALUES(2,'HSM','Hardware','Hardware Security Module','v3.2','Thales',TO_DATE('2022-12-01','YYYY-MM-DD'),TO_DATE('2023-03-10','YYYY-MM-DD'),XMLType('<config><keyLength>2048</keyLength></config>'));
+INSERT INTO Component(id,Name,Type,Description,Version,Vendor,InstallationDate,LastUpdated,Configuration)VALUES(3,'Messaging Gateway','Software','Message routing service','1.5','In-house',TO_DATE('2023-02-28','YYYY-MM-DD'),TO_DATE('2023-07-15','YYYY-MM-DD'),XMLType('<config><routing>XML</routing></config>'));
+INSERT INTO Component(id,Name,Type,Description,Version,Vendor,InstallationDate,LastUpdated,Configuration)VALUES(4,'Database Server','Software','Database for SWIFT data','MySQL 8.0','Oracle',TO_DATE('2022-11-10','YYYY-MM-DD'),TO_DATE('2023-08-01','YYYY-MM-DD'),XMLType('<config><database>SWIFT_DB</database></config>'));
+INSERT INTO Component(id,Name,Type,Description,Version,Vendor,InstallationDate,LastUpdated,Configuration)VALUES(5,'User Interface','Software','Web-based UI','2.0','In-house',TO_DATE('2023-03-05','YYYY-MM-DD'),TO_DATE('2023-09-02','YYYY-MM-DD'),XMLType('<config><framework>React</framework></config>'));
+INSERT INTO Component(id,Name,Type,Description,Version,Vendor,InstallationDate,LastUpdated,Configuration)VALUES(6,'Validation Service','Software','Message validation service','1.2','In-house',TO_DATE('2023-04-10','YYYY-MM-DD'),TO_DATE('2023-10-10','YYYY-MM-DD'),XMLType('<config><rules>MFVR</rules></config>'));
+INSERT INTO Component(id,Name,Type,Description,Version,Vendor,InstallationDate,LastUpdated,Configuration)VALUES(7,'Report Generator','Software','Reporting tool','1.3','In-house',TO_DATE('2023-05-15','YYYY-MM-DD'),TO_DATE('2023-11-15','YYYY-MM-DD'),XMLType('<config><format>PDF</format></config>'));
+INSERT INTO Component(id,Name,Type,Description,Version,Vendor,InstallationDate,LastUpdated,Configuration)VALUES(8,'Message Repair Tool','Software','Message editing tool','1.1','In-house',TO_DATE('2023-06-20','YYYY-MM-DD'),TO_DATE('2023-12-20','YYYY-MM-DD'),XMLType('<config><features>Edit</features></config>'));
+INSERT INTO Component(id,Name,Type,Description,Version,Vendor,InstallationDate,LastUpdated,Configuration)VALUES(9,'Logging Service','Software','System logging service','1.4','In-house',TO_DATE('2023-07-25','YYYY-MM-DD'),TO_DATE('2024-01-25','YYYY-MM-DD'),XMLType('<config><level>Info</level></config>'));
+INSERT INTO Component(id,Name,Type,Description,Version,Vendor,InstallationDate,LastUpdated,Configuration)VALUES(10,'Security Module','Software','Security related services','2.1','In-house',TO_DATE('2023-08-30','YYYY-MM-DD'),TO_DATE('2024-02-28','YYYY-MM-DD'),XMLType('<config><authentication>OAuth2</authentication></config>'));
 
--- Table: Direction
-INSERT INTO Direction (id, Direction) VALUES
-(1, 'Inbound'),
-(2, 'Outbound'),
-(3, 'Internal'),
-(4, 'External'),
-(5, 'Forward'),
-(6, 'Backward'),
-(7, 'Loopback'),
-(8, 'Redirect'),
-(9, 'Proxy'),
-(10, 'Tunnel');
+INSERT INTO Message_Type (id, MessageType_id, IsMX) VALUES (1, 1, 0);
+INSERT INTO Message_Type (id, MessageType_id, IsMX) VALUES (2, 2, 0);
+INSERT INTO Message_Type (id, MessageType_id, IsMX) VALUES (3, 3, 1);
+INSERT INTO Message_Type (id, MessageType_id, IsMX) VALUES (4, 4, 0);
+INSERT INTO Message_Type (id, MessageType_id, IsMX) VALUES (5, 5, 0);
+INSERT INTO Message_Type (id, MessageType_id, IsMX) VALUES (6, 6, 0);
+INSERT INTO Message_Type (id, MessageType_id, IsMX) VALUES (7, 7, 0);
+INSERT INTO Message_Type (id, MessageType_id, IsMX) VALUES (8, 8, 1);
+INSERT INTO Message_Type (id, MessageType_id, IsMX) VALUES (9, 9, 0);
+INSERT INTO Message_Type (id, MessageType_id, IsMX) VALUES (10, 10, 0);
 
--- Table: DomainName
-INSERT INTO DomainName (id, DomainName) VALUES
-(1, 'SWIFT Network'),
-(2, 'Internal Network'),
-(3, 'External Partner'),
-(4, 'Local System'),
-(5, 'Test System'),
-(6, 'Production System'),
-(7, 'Development System'),
-(8, 'Staging System'),
-(9, 'Backup System'),
-(10, 'Recovery System');
+INSERT INTO Currency (id, Currency) VALUES (1, 'USD');
+INSERT INTO Currency (id, Currency) VALUES (2, 'EUR');
+INSERT INTO Currency (id, Currency) VALUES (3, 'GBP');
+INSERT INTO Currency (id, Currency) VALUES (4, 'JPY');
+INSERT INTO Currency (id, Currency) VALUES (5, 'CAD');
+INSERT INTO Currency (id, Currency) VALUES (6, 'AUD');
+INSERT INTO Currency (id, Currency) VALUES (7, 'CHF');
+INSERT INTO Currency (id, Currency) VALUES (8, 'CNY');
+INSERT INTO Currency (id, Currency) VALUES (9, 'INR');
+INSERT INTO Currency (id, Currency) VALUES (10, 'SGD');
 
--- Table: Error_Message
-INSERT INTO Error_Message (Code, Message, Severity_id, Description, Source_Component_id, Component_id) VALUES
-(1001, 'Invalid BIC', 1, 'BIC not found in directory', 1, 6),
-(1002, 'Invalid Currency', 1, 'Currency code not recognized', 1, 6),
-(1003, 'Schema Validation Failed', 1, 'Message does not conform to XSD', 2, 6),
-(1004, 'MFVR Validation Failed', 2, 'Message failed MFVR rules', 2, 6),
-(1005, 'Database Connection Error', 1, 'Could not connect to database', 3, 4),
-(1006, 'User Authentication Failed', 1, 'Invalid username or password', 4, 10),
-(1007, 'Configuration Error', 2, 'Invalid configuration parameter', 5, 9),
-(1008, 'File Transfer Error', 1, 'Error transferring file', 6, 1),
-(1009, 'Message Repair Failed', 2, 'Error repairing message', 7, 8),
-(1010, 'Report Generation Failed', 1, 'Error generating report', 8, 7);
+INSERT INTO Transaction_Status (id, TransactionStatus) VALUES (1, 'Pending');
+INSERT INTO Transaction_Status (id, TransactionStatus) VALUES (2, 'Processing');
+INSERT INTO Transaction_Status (id, TransactionStatus) VALUES (3, 'Completed');
+INSERT INTO Transaction_Status (id, TransactionStatus) VALUES (4, 'Failed');
+INSERT INTO Transaction_Status (id, TransactionStatus) VALUES (5, 'Cancelled');
+INSERT INTO Transaction_Status (id, TransactionStatus) VALUES (6, 'Rejected');
+INSERT INTO Transaction_Status (id, TransactionStatus) VALUES (7, 'Approved');
+INSERT INTO Transaction_Status (id, TransactionStatus) VALUES (8, 'On Hold');
+INSERT INTO Transaction_Status (id, TransactionStatus) VALUES (9, 'Retried');
+INSERT INTO Transaction_Status (id, TransactionStatus) VALUES (10, 'Timeout');
 
--- Table: EventType_Massage
-INSERT INTO EventType_Massage (id, EventType) VALUES
-(1, 'Validation Start'),
-(2, 'Validation End'),
-(3, 'Schema Validation'),
-(4, 'MFVR Validation'),
-(5, 'BIC Validation'),
-(6, 'Currency Validation'),
-(7, 'Message Received'),
-(8, 'Message Sent'),
-(9, 'Message Repair'),
-(10, 'Message Routing');
+INSERT INTO Transaction (id, Timestamp, Amount, Message_Types_id, Currency_id, Transaction_Status_id, Details) VALUES (1, TO_TIMESTAMP('2025-03-23 10:00:00', 'YYYY-MM-DD HH24:MI:SS'), 100000.00, 1, 1, 3, 'MT103 transaction details');
+INSERT INTO Transaction (id, Timestamp, Amount, Message_Types_id, Currency_id, Transaction_Status_id, Details) VALUES (2, TO_TIMESTAMP('2025-03-23 10:05:00', 'YYYY-MM-DD HH24:MI:SS'), 50000.00, 2, 2, 3, 'MT202 transaction details');
+INSERT INTO Transaction (id, Timestamp, Amount, Message_Types_id, Currency_id, Transaction_Status_id, Details) VALUES (3, TO_TIMESTAMP('2025-03-23 10:10:00', 'YYYY-MM-DD HH24:MI:SS'), 200000.00, 3, 3, 3, 'MX pain transaction details');
+INSERT INTO Transaction (id, Timestamp, Amount, Message_Types_id, Currency_id, Transaction_Status_id, Details) VALUES (4, TO_TIMESTAMP('2025-03-23 10:15:00', 'YYYY-MM-DD HH24:MI:SS'), 75000.00, 4, 4, 3, 'MT940 transaction details');
+INSERT INTO Transaction (id, Timestamp, Amount, Message_Types_id, Currency_id, Transaction_Status_id, Details) VALUES (5, TO_TIMESTAMP('2025-03-23 10:20:00', 'YYYY-MM-DD HH24:MI:SS'), 150000.00, 5, 5, 3, 'MT950 transaction details');
+INSERT INTO Transaction (id, Timestamp, Amount, Message_Types_id, Currency_id, Transaction_Status_id, Details) VALUES (6, TO_TIMESTAMP('2025-03-23 10:25:00', 'YYYY-MM-DD HH24:MI:SS'), 300000.00, 6, 6, 3, 'MT101 transaction details');
+INSERT INTO Transaction (id, Timestamp, Amount, Message_Types_id, Currency_id, Transaction_Status_id, Details) VALUES (7, TO_TIMESTAMP('2025-03-23 10:30:00', 'YYYY-MM-DD HH24:MI:SS'), 120000.00, 7, 7, 3, 'MT200 transaction details');
+INSERT INTO Transaction (id, Timestamp, Amount, Message_Types_id, Currency_id, Transaction_Status_id, Details) VALUES (8, TO_TIMESTAMP('2025-03-23 10:35:00', 'YYYY-MM-DD HH24:MI:SS'), 250000.00, 8, 8, 3, 'MX camt transaction details');
+INSERT INTO Transaction (id, Timestamp, Amount, Message_Types_id, Currency_id, Transaction_Status_id, Details) VALUES (9, TO_TIMESTAMP('2025-03-23 10:40:00', 'YYYY-MM-DD HH24:MI:SS'), 80000.00, 9, 9, 3, 'MT540 transaction details');
+INSERT INTO Transaction (id, Timestamp, Amount, Message_Types_id, Currency_id, Transaction_Status_id, Details) VALUES (10, TO_TIMESTAMP('2025-03-23 10:45:00', 'YYYY-MM-DD HH24:MI:SS'), 180000.00, 10, 10, 3, 'MT542 transaction details');
 
--- Table: EventType_Transaction
-INSERT INTO EventType_Transaction (id, EventType) VALUES
-(1, 'Transaction Start'),
-(2, 'Transaction End'),
-(3, 'Transaction Approval'),
-(4, 'Transaction Rejection'),
-(5, 'Transaction Query'),
-(6, 'Transaction Update'),
-(7, 'Transaction Cancellation'),
-(8, 'Transaction Status Change'),
-(9, 'Transaction Import'),
-(10, 'Transaction Export');
+INSERT INTO Direction (id, Direction) VALUES (1, 'Inbound');
+INSERT INTO Direction (id, Direction) VALUES (2, 'Outbound');
+INSERT INTO Direction (id, Direction) VALUES (3, 'Internal');
+INSERT INTO Direction (id, Direction) VALUES (4, 'External');
+INSERT INTO Direction (id, Direction) VALUES (5, 'Forward');
+INSERT INTO Direction (id, Direction) VALUES (6, 'Backward');
+INSERT INTO Direction (id, Direction) VALUES (7, 'Loopback');
+INSERT INTO Direction (id, Direction) VALUES (8, 'Redirect');
+INSERT INTO Direction (id, Direction) VALUES (9, 'Proxy');
+INSERT INTO Direction (id, Direction) VALUES (10, 'Tunnel');
 
--- Table: EventType_User
-INSERT INTO EventType_User (id, EventType) VALUES
-(1, 'Login'),
-(2, 'Logout'),
-(3, 'User Creation'),
-(4, 'User Update'),
-(5, 'User Deletion'),
-(6, 'Password Change'),
-(7, 'Access Granted'),
-(8, 'Access Denied'),
-(9, 'Role Assignment'),
-(10, 'Role Removal');
+INSERT INTO DomainName (id, DomainName) VALUES (1, 'SWIFT Network');
+INSERT INTO DomainName (id, DomainName) VALUES (2, 'Internal Network');
+INSERT INTO DomainName (id, DomainName) VALUES (3, 'External Partner');
+INSERT INTO DomainName (id, DomainName) VALUES (4, 'Local System');
+INSERT INTO DomainName (id, DomainName) VALUES (5, 'Test System');
+INSERT INTO DomainName (id, DomainName) VALUES (6, 'Production System');
+INSERT INTO DomainName (id, DomainName) VALUES (7, 'Development System');
+INSERT INTO DomainName (id, DomainName) VALUES (8, 'Staging System');
+INSERT INTO DomainName (id, DomainName) VALUES (9, 'Backup System');
+INSERT INTO DomainName (id, DomainName) VALUES (10, 'Recovery System');
 
--- Table: Message_Type
-INSERT INTO Message_Type (id, MessageType_id, IsMX) VALUES
-(1, 1, 0),
-(2, 2, 0),
-(3, 3, 1),
-(4, 4, 0),
-(5, 5, 0),
-(6, 6, 0),
-(7, 7, 0),
-(8, 8, 1),
-(9, 9, 0),
-(10, 10, 0);
+INSERT INTO Status (id, Status) VALUES (1, 'Pending');
+INSERT INTO Status (id, Status) VALUES (2, 'Processing');
+INSERT INTO Status (id, Status) VALUES (3, 'Completed');
+INSERT INTO Status (id, Status) VALUES (4, 'Failed');
+INSERT INTO Status (id, Status) VALUES (5, 'Cancelled');
+INSERT INTO Status (id, Status) VALUES (6, 'Rejected');
+INSERT INTO Status (id, Status) VALUES (7, 'Approved');
+INSERT INTO Status (id, Status) VALUES (8, 'On Hold');
+INSERT INTO Status (id, Status) VALUES (9, 'Retried');
+INSERT INTO Status (id, Status) VALUES (10, 'Timeout');
 
--- Table: Message_Validation_Alert
-INSERT INTO Message_Validation_Alert (id, Type, Timestamp, Resolved, Message_Validation_Log_id) VALUES
-(1, 'Invalid BIC Alert', '2025-03-23 10:05:00', 0, 1),
-(2, 'Invalid Currency Alert', '2025-03-23 10:10:00', 0, 2),
-(3, 'Schema Validation Alert', '2025-03-23 10:15:00', 1, 3),
-(4, 'MFVR Validation Alert', '2025-03-23 10:20:00', 0, 4),
-(5, 'BIC Validation Alert', '2025-03-23 10:25:00', 1, 5),
-(6, 'Currency Validation Alert', '2025-03-23 10:30:00', 0, 6),
-(7, 'Message Received Alert', '2025-03-23 10:35:00', 1, 7),
-(8, 'Message Sent Alert', '2025-03-23 10:40:00', 0, 8),
-(9, 'Message Repair Alert', '2025-03-23 10:45:00', 1, 9),
-(10, 'Message Routing Alert', '2025-03-23 10:50:00', 0, 10);
+INSERT INTO Correlation_Repository (id, Transaction_id, Timestamp, MessageDetails, DomainName_id, Direction_id, ColorCode_id, Status_id) VALUES (1, 1, TO_TIMESTAMP('2025-03-23 10:00:00', 'YYYY-MM-DD HH24:MI:SS'), 'MT103 transaction', 1, 1, 2, 2);
+INSERT INTO Correlation_Repository (id, Transaction_id, Timestamp, MessageDetails, DomainName_id, Direction_id, ColorCode_id, Status_id) VALUES (2, 2, TO_TIMESTAMP('2025-03-23 10:05:00', 'YYYY-MM-DD HH24:MI:SS'), 'MT202 transaction', 1, 2, 3, 3);
+INSERT INTO Correlation_Repository (id, Transaction_id, Timestamp, MessageDetails, DomainName_id, Direction_id, ColorCode_id, Status_id) VALUES (3, 3, TO_TIMESTAMP('2025-03-23 10:10:00', 'YYYY-MM-DD HH24:MI:SS'), 'MX transaction', 2, 1, 1, 1);
+INSERT INTO Correlation_Repository (id, Transaction_id, Timestamp, MessageDetails, DomainName_id, Direction_id, ColorCode_id, Status_id) VALUES (4, 4, TO_TIMESTAMP('2025-03-23 10:15:00', 'YYYY-MM-DD HH24:MI:SS'), 'MT940 transaction', 1, 2, 2, 2);
+INSERT INTO Correlation_Repository (id, Transaction_id, Timestamp, MessageDetails, DomainName_id, Direction_id, ColorCode_id, Status_id) VALUES (5, 5, TO_TIMESTAMP('2025-03-23 10:20:00', 'YYYY-MM-DD HH24:MI:SS'), 'MT950 transaction', 1, 1, 3, 3);
+INSERT INTO Correlation_Repository (id, Transaction_id, Timestamp, MessageDetails, DomainName_id, Direction_id, ColorCode_id, Status_id) VALUES (6, 6, TO_TIMESTAMP('2025-03-23 10:25:00', 'YYYY-MM-DD HH24:MI:SS'), 'MT101 transaction', 1, 2, 1, 1);
+INSERT INTO Correlation_Repository (id, Transaction_id, Timestamp, MessageDetails, DomainName_id, Direction_id, ColorCode_id, Status_id) VALUES (7, 7, TO_TIMESTAMP('2025-03-23 10:30:00', 'YYYY-MM-DD HH24:MI:SS'), 'MT200 transaction', 2, 1, 2, 2);
+INSERT INTO Correlation_Repository (id, Transaction_id, Timestamp, MessageDetails, DomainName_id, Direction_id, ColorCode_id, Status_id) VALUES (8, 8, TO_TIMESTAMP('2025-03-23 10:35:00', 'YYYY-MM-DD HH24:MI:SS'), 'MX camt transaction', 2, 2, 3, 3);
+INSERT INTO Correlation_Repository (id, Transaction_id, Timestamp, MessageDetails, DomainName_id, Direction_id, ColorCode_id, Status_id) VALUES (9, 9, TO_TIMESTAMP('2025-03-23 10:40:00', 'YYYY-MM-DD HH24:MI:SS'), 'MT540 transaction', 3, 1, 1, 1);
+INSERT INTO Correlation_Repository (id, Transaction_id, Timestamp, MessageDetails, DomainName_id, Direction_id, ColorCode_id, Status_id) VALUES (10, 10, TO_TIMESTAMP('2025-03-23 10:45:00', 'YYYY-MM-DD HH24:MI:SS'), 'MT542 transaction', 3, 2, 2, 2);
 
--- Table: Message_Validation_Log
-INSERT INTO Message_Validation_Log (id, Timestamp, Error_Message_Code, Message_Validation_Rule_id, EventType_Massage_id) VALUES
-(1, '2025-03-23 10:05:00', 1001, 1, 5),
-(2, '2025-03-23 10:10:00', 1002, 2, 6),
-(3, '2025-03-23 10:15:00', 1003, 3, 3),
-(4, '2025-03-23 10:20:00', 1004, 4, 4),
-(5, '2025-03-23 10:25:00', 1001, 5, 5),
-(6, '2025-03-23 10:30:00', 1002, 6, 6),
-(7, '2025-03-23 10:35:00', 1003, 7, 7),
-(8, '2025-03-23 10:40:00', 1004, 8, 8),
-(9, '2025-03-23 10:45:00', 1001, 9, 9),
-(10, '2025-03-23 10:50:00', 1002, 10, 10);
+INSERT INTO Source_Component (id, Source_Component) VALUES (1, 'Validation Service');
+INSERT INTO Source_Component (id, Source_Component) VALUES (2, 'Schema Validator');
+INSERT INTO Source_Component (id, Source_Component) VALUES (3, 'Database Connector');
+INSERT INTO Source_Component (id, Source_Component) VALUES (4, 'Authentication Module');
+INSERT INTO Source_Component (id, Source_Component) VALUES (5, 'Configuration Manager');
+INSERT INTO Source_Component (id, Source_Component) VALUES (6, 'File Transfer');
+INSERT INTO Source_Component (id, Source_Component) VALUES (7, 'Message Repair');
+INSERT INTO Source_Component (id, Source_Component) VALUES (8, 'Report Generator');
+INSERT INTO Source_Component (id, Source_Component) VALUES (9, 'Log Collector');
+INSERT INTO Source_Component (id, Source_Component) VALUES (10, 'Security Module');
 
--- Table: Message_Validation_Rule
-INSERT INTO Message_Validation_Rule (id, Message_Types_id, Role_id) VALUES
-(1, 1, 1),
-(2, 2, 2),
-(3, 3, 3),
-(4, 4, 4),
-(5, 5, 5),
-(6, 6, 6),
-(7, 7, 7),
-(8, 8, 8),
-(9, 9, 9),
-(10, 10, 10);
+INSERT INTO Severity (id, Severity) VALUES (1, 1);
+INSERT INTO Severity (id, Severity) VALUES (2, 2);
+INSERT INTO Severity (id, Severity) VALUES (3, 3);
+INSERT INTO Severity (id, Severity) VALUES (4, 4);
+INSERT INTO Severity (id, Severity) VALUES (5, 5);
+INSERT INTO Severity (id, Severity) VALUES (6, 6);
+INSERT INTO Severity (id, Severity) VALUES (7, 7);
+INSERT INTO Severity (id, Severity) VALUES (8, 8);
+INSERT INTO Severity (id, Severity) VALUES (9, 9);
+INSERT INTO Severity (id, Severity) VALUES (10, 10);
 
--- Table: ReceiverBIC
-INSERT INTO ReceiverBIC (BIC_Directory_BIC, SWIFT_Transactions_id) VALUES
-('BANKGB2L', 1),
-('BANKFR1A', 2),
-('BANKDEFF', 3),
-('BANKJPJT', 4),
-('BANKCACT', 5),
-('BANKAUBB', 6),
-('BANKCHZZ', 7),
-('BANKCNBJ', 8),
-('BANKINBB', 9),
-('BANKUS33', 10);
+INSERT INTO Error_Message (Code, Message, Severity_id, Description, Source_Component_id, Component_id) VALUES (1001, 'Invalid BIC', 1, 'BIC not found in directory', 1, 6);
+INSERT INTO Error_Message (Code, Message, Severity_id, Description, Source_Component_id, Component_id) VALUES (1002, 'Invalid Currency', 1, 'Currency code not recognized', 1, 6);
+INSERT INTO Error_Message (Code, Message, Severity_id, Description, Source_Component_id, Component_id) VALUES (1003, 'Schema Validation Failed', 1, 'Message does not conform to XSD', 2, 6);
+INSERT INTO Error_Message (Code, Message, Severity_id, Description, Source_Component_id, Component_id) VALUES (1004, 'MFVR Validation Failed', 2, 'Message failed MFVR rules', 2, 6);
+INSERT INTO Error_Message (Code, Message, Severity_id, Description, Source_Component_id, Component_id) VALUES (1005, 'Database Connection Error', 1, 'Could not connect to database', 3, 4);
+INSERT INTO Error_Message (Code, Message, Severity_id, Description, Source_Component_id, Component_id) VALUES (1006, 'User Authentication Failed', 1, 'Invalid username or password', 4, 10);
+INSERT INTO Error_Message (Code, Message, Severity_id, Description, Source_Component_id, Component_id) VALUES (1007, 'Configuration Error', 2, 'Invalid configuration parameter', 5, 9);
+INSERT INTO Error_Message (Code, Message, Severity_id, Description, Source_Component_id, Component_id) VALUES (1008, 'File Transfer Error', 1, 'Error transferring file', 6, 1);
+INSERT INTO Error_Message (Code, Message, Severity_id, Description, Source_Component_id, Component_id) VALUES (1009, 'Message Repair Failed', 2, 'Error repairing message', 7, 8);
+INSERT INTO Error_Message (Code, Message, Severity_id, Description, Source_Component_id, Component_id) VALUES (1010, 'Report Generation Failed', 1, 'Error generating report', 8, 7);
 
--- Table: Role
-INSERT INTO Role (id, RuleType, RuleDescription, RuleExpression) VALUES
-(1, 'MFVR', 'Amount must be positive', 'Amount > 0'),
-(2, 'MFVR', 'Currency must be in ISO list', 'Currency in (USD, EUR, GBP)'),
-(3, 'Schema', 'Message must conform to XSD', 'XSD validation'),
-(4, 'BIC', 'BIC must exist in directory', 'BIC in BIC_Directory'),
-(5, 'IBAN', 'IBAN must be valid', 'IBAN validation'),
-(6, 'Country', 'Country must be in ISO list', 'Country in (US, GB, FR)'),
-(7, 'Date', 'Date must be in valid format', 'Date format YYYY-MM-DD'),
-(8, 'Time', 'Time must be in valid format', 'Time format HH:MM:SS'),
-(9, 'Length', 'Field length must be within limits', 'Length(field) < 255'),
-(10, 'Regex', 'Field must match pattern', 'Regex validation');
+INSERT INTO EventType_Massage (id, EventType) VALUES (1, 'Validation Start');
+INSERT INTO EventType_Massage (id, EventType) VALUES (2, 'Validation End');
+INSERT INTO EventType_Massage (id, EventType) VALUES (3, 'Schema Validation');
+INSERT INTO EventType_Massage (id, EventType) VALUES (4, 'MFVR Validation');
+INSERT INTO EventType_Massage (id, EventType) VALUES (5, 'BIC Validation');
+INSERT INTO EventType_Massage (id, EventType) VALUES (6, 'Currency Validation');
+INSERT INTO EventType_Massage (id, EventType) VALUES (7, 'Message Received');
+INSERT INTO EventType_Massage (id, EventType) VALUES (8, 'Message Sent');
+INSERT INTO EventType_Massage (id, EventType) VALUES (9, 'Message Repair');
+INSERT INTO EventType_Massage (id, EventType) VALUES (10, 'Message Routing');
 
--- Table: SenderBIC
-INSERT INTO SenderBIC (BIC_Directory_BIC, Transactions_id) VALUES
-('BANKUS33', 1),
-('BANKGB2L', 2),
-('BANKFR1A', 3),
-('BANKDEFF', 4),
-('BANKJPJT', 5),
-('BANKCACT', 6),
-('BANKAUBB', 7),
-('BANKCHZZ', 8),
-('BANKCNBJ', 9),
-('BANKINBB', 10);
+INSERT INTO EventType_Transaction (id, EventType) VALUES (1, 'Transaction Start');
+INSERT INTO EventType_Transaction (id, EventType) VALUES (2, 'Transaction End');
+INSERT INTO EventType_Transaction (id, EventType) VALUES (3, 'Transaction Approval');
+INSERT INTO EventType_Transaction (id, EventType) VALUES (4, 'Transaction Rejection');
+INSERT INTO EventType_Transaction (id, EventType) VALUES (5, 'Transaction Query');
+INSERT INTO EventType_Transaction (id, EventType) VALUES (6, 'Transaction Update');
+INSERT INTO EventType_Transaction (id, EventType) VALUES (7, 'Transaction Cancellation');
+INSERT INTO EventType_Transaction (id, EventType) VALUES (8, 'Transaction Status Change');
+INSERT INTO EventType_Transaction (id, EventType) VALUES (9, 'Transaction Import');
+INSERT INTO EventType_Transaction (id, EventType) VALUES (10, 'Transaction Export');
 
--- Table: Severity
-INSERT INTO Severity (id, Severity) VALUES
-(1, 1),
-(2, 2),
-(3, 3),
-(4, 4),
-(5, 5),
-(6, 6),
-(7, 7),
-(8, 8),
-(9, 9),
-(10, 10);
+INSERT INTO EventType_User (id, EventType) VALUES (1, 'Login');
+INSERT INTO EventType_User (id, EventType) VALUES (2, 'Logout');
+INSERT INTO EventType_User (id, EventType) VALUES (3, 'User Creation');
+INSERT INTO EventType_User (id, EventType) VALUES (4, 'User Update');
+INSERT INTO EventType_User (id, EventType) VALUES (5, 'User Deletion');
+INSERT INTO EventType_User (id, EventType) VALUES (6, 'Password Change');
+INSERT INTO EventType_User (id, EventType) VALUES (7, 'Access Granted');
+INSERT INTO EventType_User (id, EventType) VALUES (8, 'Access Denied');
+INSERT INTO EventType_User (id, EventType) VALUES (9, 'Role Assignment');
+INSERT INTO EventType_User (id, EventType) VALUES (10, 'Role Removal');
 
--- Table: Source_Component
-INSERT INTO Source_Component (id, Source_Component) VALUES
-(1, 'Validation Service'),
-(2, 'Schema Validator'),
-(3, 'Database Connector'),
-(4, 'Authentication Module'),
-(5, 'Configuration Manager'),
-(6, 'File Transfer'),
-(7, 'Message Repair'),
-(8, 'Report Generator'),
-(9, 'Log Collector'),
-(10, 'Security Module');
+INSERT INTO Role(id,RuleType,RuleDescription,RuleExpression)VALUES(1,'MFVR','Amount must be positive','Amount > 0');
+INSERT INTO Role(id,RuleType,RuleDescription,RuleExpression)VALUES(2,'MFVR','Currency must be in ISO list','Currency in (USD, EUR, GBP)');
+INSERT INTO Role(id,RuleType,RuleDescription,RuleExpression)VALUES(3,'Schema','Message must conform to XSD','XSD validation');
+INSERT INTO Role(id,RuleType,RuleDescription,RuleExpression)VALUES(4,'BIC','BIC must exist in directory','BIC in BIC_Directory');
+INSERT INTO Role(id,RuleType,RuleDescription,RuleExpression)VALUES(5,'IBAN','IBAN must be valid','IBAN validation');
+INSERT INTO Role(id,RuleType,RuleDescription,RuleExpression)VALUES(6,'Country','Country must be in ISO list','Country in (US, GB, FR)');
+INSERT INTO Role(id,RuleType,RuleDescription,RuleExpression)VALUES(7,'Date','Date must be in valid format','Date formatYYYY-MM-DD');
+INSERT INTO Role(id,RuleType,RuleDescription,RuleExpression)VALUES(8,'Time','Time must be in valid format','Time format HH:MM:SS');
+INSERT INTO Role(id,RuleType,RuleDescription,RuleExpression)VALUES(9,'Length','Field length must be within limits','Length(field) < 255');
+INSERT INTO Role(id,RuleType,RuleDescription,RuleExpression)VALUES(10,'Regex','Field must match pattern','Regex validation');
 
--- Table: Status
-INSERT INTO Status (id, Status) VALUES
-(1, 'Pending'),
-(2, 'Processing'),
-(3, 'Completed'),
-(4, 'Failed'),
-(5, 'Cancelled'),
-(6, 'Rejected'),
-(7, 'Approved'),
-(8, 'On Hold'),
-(9, 'Retried'),
-(10, 'Timeout');
+INSERT INTO Message_Validation_Rule(id,Message_Types_id,Role_id)VALUES(1,1,1);
+INSERT INTO Message_Validation_Rule(id,Message_Types_id,Role_id)VALUES(2,2,2);
+INSERT INTO Message_Validation_Rule(id,Message_Types_id,Role_id)VALUES(3,3,3);
+INSERT INTO Message_Validation_Rule(id,Message_Types_id,Role_id)VALUES(4,4,4);
+INSERT INTO Message_Validation_Rule(id,Message_Types_id,Role_id)VALUES(5,5,5);
+INSERT INTO Message_Validation_Rule(id,Message_Types_id,Role_id)VALUES(6,6,6);
+INSERT INTO Message_Validation_Rule(id,Message_Types_id,Role_id)VALUES(7,7,7);
+INSERT INTO Message_Validation_Rule(id,Message_Types_id,Role_id)VALUES(8,8,8);
+INSERT INTO Message_Validation_Rule(id,Message_Types_id,Role_id)VALUES(9,9,9);
+INSERT INTO Message_Validation_Rule(id,Message_Types_id,Role_id)VALUES(10,10,10);
 
--- Table: System_Alert
-INSERT INTO System_Alert (id, SWIFT_System_Logs_id, Type, Timestamp, Resolved) VALUES
-(1, 1, 'Login Failure', '2025-03-23 10:05:00', 0),
-(2, 2, 'Configuration Change', '2025-03-23 10:10:00', 1),
-(3, 3, 'Database Error', '2025-03-23 10:15:00', 0),
-(4, 4, 'File Transfer Failure', '2025-03-23 10:20:00', 1),
-(5, 5, 'Security Alert', '2025-03-23 10:25:00', 0),
-(6, 6, 'System Restart', '2025-03-23 10:30:00', 1),
-(7, 7, 'Memory Usage High', '2025-03-23 10:35:00', 0),
-(8, 8, 'Network Error', '2025-03-23 10:40:00', 1),
-(9, 9, 'Disk Space Low', '2025-03-23 10:45:00', 0),
-(10, 10, 'Timeout Alert', '2025-03-23 10:50:00', 1);
+INSERT INTO Message_Validation_Log(id,Timestamp,Error_Message_Code,Message_Validation_Rule_id,EventType_Massage_id)VALUES(1,TO_TIMESTAMP('2025-03-23 10:05:00','YYYY-MM-DD HH24:MI:SS'),1001,1,5);
+INSERT INTO Message_Validation_Log(id,Timestamp,Error_Message_Code,Message_Validation_Rule_id,EventType_Massage_id)VALUES(2,TO_TIMESTAMP('2025-03-23 10:10:00','YYYY-MM-DD HH24:MI:SS'),1002,2,6);
+INSERT INTO Message_Validation_Log(id,Timestamp,Error_Message_Code,Message_Validation_Rule_id,EventType_Massage_id)VALUES(3,TO_TIMESTAMP('2025-03-23 10:15:00','YYYY-MM-DD HH24:MI:SS'),1003,3,3);
+INSERT INTO Message_Validation_Log(id,Timestamp,Error_Message_Code,Message_Validation_Rule_id,EventType_Massage_id)VALUES(4,TO_TIMESTAMP('2025-03-23 10:20:00','YYYY-MM-DD HH24:MI:SS'),1004,4,4);
+INSERT INTO Message_Validation_Log(id,Timestamp,Error_Message_Code,Message_Validation_Rule_id,EventType_Massage_id)VALUES(5,TO_TIMESTAMP('2025-03-23 10:25:00','YYYY-MM-DD HH24:MI:SS'),1001,5,5);
+INSERT INTO Message_Validation_Log(id,Timestamp,Error_Message_Code,Message_Validation_Rule_id,EventType_Massage_id)VALUES(6,TO_TIMESTAMP('2025-03-23 10:30:00','YYYY-MM-DD HH24:MI:SS'),1002,6,6);
+INSERT INTO Message_Validation_Log(id,Timestamp,Error_Message_Code,Message_Validation_Rule_id,EventType_Massage_id)VALUES(7,TO_TIMESTAMP('2025-03-23 10:35:00','YYYY-MM-DD HH24:MI:SS'),1003,7,7);
+INSERT INTO Message_Validation_Log(id,Timestamp,Error_Message_Code,Message_Validation_Rule_id,EventType_Massage_id)VALUES(8,TO_TIMESTAMP('2025-03-23 10:40:00','YYYY-MM-DD HH24:MI:SS'),1004,8,8);
+INSERT INTO Message_Validation_Log(id,Timestamp,Error_Message_Code,Message_Validation_Rule_id,EventType_Massage_id)VALUES(9,TO_TIMESTAMP('2025-03-23 10:45:00','YYYY-MM-DD HH24:MI:SS'),1001,9,9);
+INSERT INTO Message_Validation_Log(id,Timestamp,Error_Message_Code,Message_Validation_Rule_id,EventType_Massage_id)VALUES(10,TO_TIMESTAMP('2025-03-23 10:50:00','YYYY-MM-DD HH24:MI:SS'),1002,10,10);
 
--- Table: Transaction
-INSERT INTO Transaction (id, Timestamp, Amount, Message_Types_id, Currency_id, Transaction_Status_id, Details) VALUES
-(1, '2025-03-23 10:00:00', 100000.00, 1, 1, 3, 'MT103 transaction details'),
-(2, '2025-03-23 10:05:00', 50000.00, 2, 2, 3, 'MT202 transaction details'),
-(3, '2025-03-23 10:10:00', 200000.00, 3, 3, 3, 'MX pain transaction details'),
-(4, '2025-03-23 10:15:00', 75000.00, 4, 4, 3, 'MT940 transaction details'),
-(5, '2025-03-23 10:20:00', 150000.00, 5, 5, 3, 'MT950 transaction details'),
-(6, '2025-03-23 10:25:00', 300000.00, 6, 6, 3, 'MT101 transaction details'),
-(7, '2025-03-23 10:30:00', 120000.00, 7, 7, 3, 'MT200 transaction details'),
-(8, '2025-03-23 10:35:00', 250000.00, 8, 8, 3, 'MX camt transaction details'),
-(9, '2025-03-23 10:40:00', 80000.00, 9, 9, 3, 'MT540 transaction details'),
-(10, '2025-03-23 10:45:00', 180000.00, 10, 10, 3, 'MT542 transaction details');
+INSERT INTO Message_Validation_Alert(id,Type,Timestamp,Resolved,Message_Validation_Log_id)VALUES(1,'Invalid BIC Alert',TO_TIMESTAMP('2025-03-23 10:05:00','YYYY-MM-DD HH24:MI:SS'),0,1);
+INSERT INTO Message_Validation_Alert(id,Type,Timestamp,Resolved,Message_Validation_Log_id)VALUES(2,'Invalid Currency Alert',TO_TIMESTAMP('2025-03-23 10:10:00','YYYY-MM-DD HH24:MI:SS'),0,2);
+INSERT INTO Message_Validation_Alert(id,Type,Timestamp,Resolved,Message_Validation_Log_id)VALUES(3,'Schema Validation Alert',TO_TIMESTAMP('2025-03-23 10:15:00','YYYY-MM-DD HH24:MI:SS'),1,3);
+INSERT INTO Message_Validation_Alert(id,Type,Timestamp,Resolved,Message_Validation_Log_id)VALUES(4,'MFVR Validation Alert',TO_TIMESTAMP('2025-03-23 10:20:00','YYYY-MM-DD HH24:MI:SS'),0,4);
+INSERT INTO Message_Validation_Alert(id,Type,Timestamp,Resolved,Message_Validation_Log_id)VALUES(5,'BIC Validation Alert',TO_TIMESTAMP('2025-03-23 10:25:00','YYYY-MM-DD HH24:MI:SS'),1,5);
+INSERT INTO Message_Validation_Alert(id,Type,Timestamp,Resolved,Message_Validation_Log_id)VALUES(6,'Currency Validation Alert',TO_TIMESTAMP('2025-03-23 10:30:00','YYYY-MM-DD HH24:MI:SS'),0,6);
+INSERT INTO Message_Validation_Alert(id,Type,Timestamp,Resolved,Message_Validation_Log_id)VALUES(7,'Message Received Alert',TO_TIMESTAMP('2025-03-23 10:35:00','YYYY-MM-DD HH24:MI:SS'),1,7);
+INSERT INTO Message_Validation_Alert(id,Type,Timestamp,Resolved,Message_Validation_Log_id)VALUES(8,'Message Sent Alert',TO_TIMESTAMP('2025-03-23 10:40:00','YYYY-MM-DD HH24:MI:SS'),0,8);
+INSERT INTO Message_Validation_Alert(id,Type,Timestamp,Resolved,Message_Validation_Log_id)VALUES(9,'Message Repair Alert',TO_TIMESTAMP('2025-03-23 10:45:00','YYYY-MM-DD HH24:MI:SS'),1,9);
+INSERT INTO Message_Validation_Alert(id,Type,Timestamp,Resolved,Message_Validation_Log_id)VALUES(10,'Message Routing Alert',TO_TIMESTAMP('2025-03-23 10:50:00','YYYY-MM-DD HH24:MI:SS'),0,10);
 
--- Table: Transaction_Alert
-INSERT INTO Transaction_Alert (id, Type, Timestamp, Resolved, System_Log_id) VALUES
-(1, 'Amount Too High', '2025-03-23 10:05:00', 0, 1),
-(2, 'Invalid Currency', '2025-03-23 10:10:00', 0, 2),
-(3, 'Message Format Error', '2025-03-23 10:15:00', 1, 3),
-(4, 'BIC Not Found', '2025-03-23 10:20:00', 0, 4),
-(5, 'IBAN Invalid', '2025-03-23 10:25:00', 1, 5),
-(6, 'Country Code Error', '2025-03-23 10:30:00', 0, 6),
-(7, 'Date Format Error', '2025-03-23 10:35:00', 1, 7),
-(8, 'Time Format Error', '2025-03-23 10:40:00', 0, 8),
-(9, 'Length Exceeded', '2025-03-23 10:45:00', 1, 9),
-(10, 'Regex Mismatch', '2025-03-23 10:50:00', 0, 10);
+INSERT INTO Transaction_Log(id,Timestamp,Error_Message_Code,Transaction_id,EventType_Transaction_id)VALUES(1,TO_TIMESTAMP('2025-03-23 10:05:00','YYYY-MM-DD HH24:MI:SS'),1001,1,1);
+INSERT INTO Transaction_Log(id,Timestamp,Error_Message_Code,Transaction_id,EventType_Transaction_id)VALUES(2,TO_TIMESTAMP('2025-03-23 10:10:00','YYYY-MM-DD HH24:MI:SS'),1002,2,2);
+INSERT INTO Transaction_Log(id,Timestamp,Error_Message_Code,Transaction_id,EventType_Transaction_id)VALUES(3,TO_TIMESTAMP('2025-03-23 10:15:00','YYYY-MM-DD HH24:MI:SS'),1003,3,3);
+INSERT INTO Transaction_Log(id,Timestamp,Error_Message_Code,Transaction_id,EventType_Transaction_id)VALUES(4,TO_TIMESTAMP('2025-03-23 10:20:00','YYYY-MM-DD HH24:MI:SS'),1004,4,4);
+INSERT INTO Transaction_Log(id,Timestamp,Error_Message_Code,Transaction_id,EventType_Transaction_id)VALUES(5,TO_TIMESTAMP('2025-03-23 10:25:00','YYYY-MM-DD HH24:MI:SS'),1001,5,5);
+INSERT INTO Transaction_Log(id,Timestamp,Error_Message_Code,Transaction_id,EventType_Transaction_id)VALUES(6,TO_TIMESTAMP('2025-03-23 10:30:00','YYYY-MM-DD HH24:MI:SS'),1002,6,6);
+INSERT INTO Transaction_Log(id,Timestamp,Error_Message_Code,Transaction_id,EventType_Transaction_id)VALUES(7,TO_TIMESTAMP('2025-03-23 10:35:00','YYYY-MM-DD HH24:MI:SS'),1003,7,7);
+INSERT INTO Transaction_Log(id,Timestamp,Error_Message_Code,Transaction_id,EventType_Transaction_id)VALUES(8,TO_TIMESTAMP('2025-03-23 10:40:00','YYYY-MM-DD HH24:MI:SS'),1004,8,8);
+INSERT INTO Transaction_Log(id,Timestamp,Error_Message_Code,Transaction_id,EventType_Transaction_id)VALUES(9,TO_TIMESTAMP('2025-03-23 10:45:00','YYYY-MM-DD HH24:MI:SS'),1001,9,9);
+INSERT INTO Transaction_Log(id,Timestamp,Error_Message_Code,Transaction_id,EventType_Transaction_id)VALUES(10,TO_TIMESTAMP('2025-03-23 10:50:00','YYYY-MM-DD HH24:MI:SS'),1002,10,10);
 
--- Table: Transaction_Log
-INSERT INTO Transaction_Log (id, Timestamp, Error_Message_Code, Transaction_id, EventType_Transaction_id) VALUES
-(1, '2025-03-23 10:05:00', 1001, 1, 1),
-(2, '2025-03-23 10:10:00', 1002, 2, 2),
-(3, '2025-03-23 10:15:00', 1003, 3, 3),
-(4, '2025-03-23 10:20:00', 1004, 4, 4),
-(5, '2025-03-23 10:25:00', 1001, 5, 5),
-(6, '2025-03-23 10:30:00', 1002, 6, 6),
-(7, '2025-03-23 10:35:00', 1003, 7, 7),
-(8, '2025-03-23 10:40:00', 1004, 8, 8),
-(9, '2025-03-23 10:45:00', 1001, 9, 9),
-(10, '2025-03-23 10:50:00', 1002, 10, 10);
+INSERT INTO Transaction_Alert(id,Type,Timestamp,Resolved,System_Log_id)VALUES(1,'Amount Too High',TO_TIMESTAMP('2025-03-23 10:05:00','YYYY-MM-DD HH24:MI:SS'),0,1);
+INSERT INTO Transaction_Alert(id,Type,Timestamp,Resolved,System_Log_id)VALUES(2,'Invalid Currency',TO_TIMESTAMP('2025-03-23 10:10:00','YYYY-MM-DD HH24:MI:SS'),0,2);
+INSERT INTO Transaction_Alert(id,Type,Timestamp,Resolved,System_Log_id)VALUES(3,'Message Format Error',TO_TIMESTAMP('2025-03-23 10:15:00','YYYY-MM-DD HH24:MI:SS'),1,3);
+INSERT INTO Transaction_Alert(id,Type,Timestamp,Resolved,System_Log_id)VALUES(4,'BIC Not Found',TO_TIMESTAMP('2025-03-23 10:20:00','YYYY-MM-DD HH24:MI:SS'),0,4);
+INSERT INTO Transaction_Alert(id,Type,Timestamp,Resolved,System_Log_id)VALUES(5,'IBAN Invalid',TO_TIMESTAMP('2025-03-23 10:25:00','YYYY-MM-DD HH24:MI:SS'),1,5);
+INSERT INTO Transaction_Alert(id,Type,Timestamp,Resolved,System_Log_id)VALUES(6,'Country Code Error',TO_TIMESTAMP('2025-03-23 10:30:00','YYYY-MM-DD HH24:MI:SS'),0,6);
+INSERT INTO Transaction_Alert(id,Type,Timestamp,Resolved,System_Log_id)VALUES(7,'Date Format Error',TO_TIMESTAMP('2025-03-23 10:35:00','YYYY-MM-DD HH24:MI:SS'),1,7);
+INSERT INTO Transaction_Alert(id,Type,Timestamp,Resolved,System_Log_id)VALUES(8,'Time Format Error',TO_TIMESTAMP('2025-03-23 10:40:00','YYYY-MM-DD HH24:MI:SS'),0,8);
+INSERT INTO Transaction_Alert(id,Type,Timestamp,Resolved,System_Log_id)VALUES(9,'Length Exceeded',TO_TIMESTAMP('2025-03-23 10:45:00','YYYY-MM-DD HH24:MI:SS'),1,9);
+INSERT INTO Transaction_Alert(id,Type,Timestamp,Resolved,System_Log_id)VALUES(10,'Regex Mismatch',TO_TIMESTAMP('2025-03-23 10:50:00','YYYY-MM-DD HH24:MI:SS'),0,10);
 
--- Table: Transaction_Status
-INSERT INTO Transaction_Status (id, TransactionStatus) VALUES
-(1, 'Pending'),
-(2, 'Processing'),
-(3, 'Completed'),
-(4, 'Failed'),
-(5, 'Cancelled'),
-(6, 'Rejected'),
-(7, 'Approved'),
-(8, 'On Hold'),
-(9, 'Retried'),
-(10, 'Timeout');
+INSERT INTO "User" (id, Username, Role) VALUES (1, 'alice', 'Admin');
+INSERT INTO "User" (id, Username, Role) VALUES (2, 'bob', 'User');
+INSERT INTO "User" (id, Username, Role) VALUES (3, 'charlie', 'Manager');
+INSERT INTO "User" (id, Username, Role) VALUES (4, 'david', 'User');
+INSERT INTO "User" (id, Username, Role) VALUES (5, 'eve', 'Admin');
+INSERT INTO "User" (id, Username, Role) VALUES (6, 'frank', 'User');
+INSERT INTO "User" (id, Username, Role) VALUES (7, 'grace', 'Manager');
+INSERT INTO "User" (id, Username, Role) VALUES (8, 'henry', 'User');
+INSERT INTO "User" (id, Username, Role) VALUES (9, 'irene', 'Admin');
+INSERT INTO "User" (id, Username, Role) VALUES (10, 'jack', 'User');
 
--- Table: User
-INSERT INTO "User" (id, Username, Role) VALUES
-(1, 'alice', 'Admin'),
-(2, 'bob', 'User'),
-(3, 'charlie', 'Manager'),
-(4, 'david', 'User'),
-(5, 'eve', 'Admin'),
-(6, 'frank', 'User'),
-(7, 'grace', 'Manager'),
-(8, 'henry', 'User'),
-(9, 'irene', 'Admin'),
-(10, 'jack', 'User');
+INSERT INTO User_BIC (BIC_Directory_BIC, Users_id) VALUES ('BANKUS33', 1);
+INSERT INTO User_BIC (BIC_Directory_BIC, Users_id) VALUES ('BANKGB2L', 2);
+INSERT INTO User_BIC (BIC_Directory_BIC, Users_id) VALUES ('BANKFR1A', 3);
+INSERT INTO User_BIC (BIC_Directory_BIC, Users_id) VALUES ('BANKDEFF', 4);
+INSERT INTO User_BIC (BIC_Directory_BIC, Users_id) VALUES ('BANKJPJT', 5);
+INSERT INTO User_BIC (BIC_Directory_BIC, Users_id) VALUES ('BANKCACT', 6);
+INSERT INTO User_BIC (BIC_Directory_BIC, Users_id) VALUES ('BANKAUBB', 7);
+INSERT INTO User_BIC (BIC_Directory_BIC, Users_id) VALUES ('BANKCHZZ', 8);
+INSERT INTO User_BIC (BIC_Directory_BIC, Users_id) VALUES ('BANKCNBJ', 9);
+INSERT INTO User_BIC (BIC_Directory_BIC, Users_id) VALUES ('BANKINBB', 10);
 
--- Table: User_Access
-INSERT INTO User_Access (User_id, Access_Control_List_id) VALUES
-(1, 1),
-(1, 2),
-(2, 3),
-(3, 4),
-(3, 1),
-(4, 5),
-(5, 6),
-(5, 7),
-(6, 8),
-(7, 9),
-(8, 10),
-(9, 1);
+INSERT INTO XSD_Schemas(id,SchemaName,TargetNamespace,FilePath,Description,Version,Message_Type_id)VALUES(1,'MT103.xsd','urn:swift:xsd:mt103','/path/to/MT103.xsd','XSD for MT103','2023',1);
+INSERT INTO XSD_Schemas(id,SchemaName,TargetNamespace,FilePath,Description,Version,Message_Type_id)VALUES(2,'MT202.xsd','urn:swift:xsd:mt202','/path/to/MT202.xsd','XSD for MT202','2023',2);
+INSERT INTO XSD_Schemas(id,SchemaName,TargetNamespace,FilePath,Description,Version,Message_Type_id)VALUES(3,'pain.001.001.03.xsd','urn:swift:xsd:pain.001.001.03','/path/to/pain.xsd','XSD for pain.001.001.03','2023',3);
+INSERT INTO XSD_Schemas(id,SchemaName,TargetNamespace,FilePath,Description,Version,Message_Type_id)VALUES(4,'MT940.xsd','urn:swift:xsd:mt940','/path/to/MT940.xsd','XSD for MT940','2023',4);
+INSERT INTO XSD_Schemas(id,SchemaName,TargetNamespace,FilePath,Description,Version,Message_Type_id)VALUES(5,'MT950.xsd','urn:swift:xsd:mt950','/path/to/MT950.xsd','XSD for MT950','2023',5);
+INSERT INTO XSD_Schemas(id,SchemaName,TargetNamespace,FilePath,Description,Version,Message_Type_id)VALUES(6,'MT101.xsd','urn:swift:xsd:mt101','/path/to/MT101.xsd','XSD for MT101','2023',6);
+INSERT INTO XSD_Schemas(id,SchemaName,TargetNamespace,FilePath,Description,Version,Message_Type_id)VALUES(7,'MT200.xsd','urn:swift:xsd:mt200','/path/to/MT200.xsd','XSD for MT200','2023',7);
+INSERT INTO XSD_Schemas(id,SchemaName,TargetNamespace,FilePath,Description,Version,Message_Type_id)VALUES(8,'camt.053.001.02.xsd','urn:swift:xsd:camt.053.001.02','/path/to/camt.xsd','XSD for camt.053.001.02','2023',8);
+INSERT INTO XSD_Schemas(id,SchemaName,TargetNamespace,FilePath,Description,Version,Message_Type_id)VALUES(9,'MT540.xsd','urn:swift:xsd:mt540','/path/to/MT540.xsd','XSD for MT540','2023',9);
+INSERT INTO XSD_Schemas(id,SchemaName,TargetNamespace,FilePath,Description,Version,Message_Type_id)VALUES(10,'MT542.xsd','urn:swift:xsd:mt542','/path/to/MT542.xsd','XSD for MT542','2023',10);
 
--- Table: User_Activity
-INSERT INTO User_Activity (User_id, Activity_id) VALUES
-(1, 1),
-(2, 2),
-(3, 3),
-(4, 4),
-(5, 5),
-(6, 6),
-(7, 7),
-(8, 8),
-(9, 9),
-(10, 10);
+ALTER TABLE User_Log MODIFY (ERROR_MESSAGE_CODE NUMBER NULL);
 
--- Table: User_BIC
-INSERT INTO User_BIC (BIC_Directory_BIC, Users_id) VALUES
-('BANKUS33', 1),
-('BANKGB2L', 2),
-('BANKFR1A', 3),
-('BANKDEFF', 4),
-('BANKJPJT', 5),
-('BANKCACT', 6),
-('BANKAUBB', 7),
-('BANKCHZZ', 8),
-('BANKCNBJ', 9),
-('BANKINBB', 10);
+INSERT INTO User_Log(id,Timestamp,EventType,Error_Message_Code,User_id,EventType_User_id)VALUES(1,TO_TIMESTAMP('2025-03-23 10:05:00','YYYY-MM-DD HH24:MI:SS'),'Login',1006,1,1);
+INSERT INTO User_Log(id,Timestamp,EventType,Error_Message_Code,User_id,EventType_User_id)VALUES(2,TO_TIMESTAMP('2025-03-23 10:10:00','YYYY-MM-DD HH24:MI:SS'),'Logout',NULL,2,2);
+INSERT INTO User_Log(id,Timestamp,EventType,Error_Message_Code,User_id,EventType_User_id)VALUES(3,TO_TIMESTAMP('2025-03-23 10:15:00','YYYY-MM-DD HH24:MI:SS'),'User Creation',NULL,3,3);
+INSERT INTO User_Log(id,Timestamp,EventType,Error_Message_Code,User_id,EventType_User_id)VALUES(4,TO_TIMESTAMP('2025-03-23 10:20:00','YYYY-MM-DD HH24:MI:SS'),'User Update',NULL,4,4);
+INSERT INTO User_Log(id,Timestamp,EventType,Error_Message_Code,User_id,EventType_User_id)VALUES(5,TO_TIMESTAMP('2025-03-23 10:25:00','YYYY-MM-DD HH24:MI:SS'),'User Deletion',NULL,5,5);
+INSERT INTO User_Log(id,Timestamp,EventType,Error_Message_Code,User_id,EventType_User_id)VALUES(6,TO_TIMESTAMP('2025-03-23 10:30:00','YYYY-MM-DD HH24:MI:SS'),'Password Change',NULL,6,6);
+INSERT INTO User_Log(id,Timestamp,EventType,Error_Message_Code,User_id,EventType_User_id)VALUES(7,TO_TIMESTAMP('2025-03-23 10:35:00','YYYY-MM-DD HH24:MI:SS'),'Access Granted',NULL,7,7);
+INSERT INTO User_Log(id,Timestamp,EventType,Error_Message_Code,User_id,EventType_User_id)VALUES(8,TO_TIMESTAMP('2025-03-23 10:40:00','YYYY-MM-DD HH24:MI:SS'),'Access Denied',NULL,8,8);
+INSERT INTO User_Log(id,Timestamp,EventType,Error_Message_Code,User_id,EventType_User_id)VALUES(9,TO_TIMESTAMP('2025-03-23 10:45:00','YYYY-MM-DD HH24:MI:SS'),'Role Assignment',NULL,9,9);
+INSERT INTO User_Log(id,Timestamp,EventType,Error_Message_Code,User_id,EventType_User_id)VALUES(10,TO_TIMESTAMP('2025-03-23 10:50:00','YYYY-MM-DD HH24:MI:SS'),'Role Removal',NULL,10,10);
 
--- Table: User_Log
-INSERT INTO User_Log (id, Timestamp, EventType, Error_Message_Code, User_id, EventType_User_id) VALUES
-(1, '2025-03-23 10:05:00', 'Login', 1006, 1, 1),
-(2, '2025-03-23 10:10:00', 'Logout', NULL, 2, 2),
-(3, '2025-03-23 10:15:00', 'User Creation', NULL, 3, 3),
-(4, '2025-03-23 10:20:00', 'User Update', NULL, 4, 4),
-(5, '2025-03-23 10:25:00', 'User Deletion', NULL, 5, 5),
-(6, '2025-03-23 10:30:00', 'Password Change', NULL, 6, 6),
-(7, '2025-03-23 10:35:00', 'Access Granted', NULL, 7, 7),
-(8, '2025-03-23 10:40:00', 'Access Denied', NULL, 8, 8),
-(9, '2025-03-23 10:45:00', 'Role Assignment', NULL, 9, 9),
-(10, '2025-03-23 10:50:00', 'Role Removal', NULL, 10, 10);
+INSERT INTO User_Access (User_id, Access_Control_List_id) VALUES (1, 1);
+INSERT INTO User_Access (User_id, Access_Control_List_id) VALUES (1, 2);
+INSERT INTO User_Access (User_id, Access_Control_List_id) VALUES (2, 3);
+INSERT INTO User_Access (User_id, Access_Control_List_id) VALUES (3, 4);
+INSERT INTO User_Access (User_id, Access_Control_List_id) VALUES (3, 1);
+INSERT INTO User_Access (User_id, Access_Control_List_id) VALUES (4, 5);
+INSERT INTO User_Access (User_id, Access_Control_List_id) VALUES (5, 6);
+INSERT INTO User_Access (User_id, Access_Control_List_id) VALUES (5, 7);
+INSERT INTO User_Access (User_id, Access_Control_List_id) VALUES (6, 8);
+INSERT INTO User_Access (User_id, Access_Control_List_id) VALUES (7, 9);
+INSERT INTO User_Access (User_id, Access_Control_List_id) VALUES (8, 10);
+INSERT INTO User_Access (User_id, Access_Control_List_id) VALUES (9, 1);
 
--- Table: XSD_Schemas
-INSERT INTO XSD_Schemas (id, SchemaName, TargetNamespace, FilePath, Description, Version, Message_Type_id) VALUES
-(1, 'MT103.xsd', 'urn:swift:xsd:mt103', '/path/to/MT103.xsd', 'XSD for MT103', '2023', 1),
-(2, 'MT202.xsd', 'urn:swift:xsd:mt202', '/path/to/MT202.xsd', 'XSD for MT202', '2023', 2),
-(3, 'pain.001.001.03.xsd', 'urn:swift:xsd:pain.001.001.03', '/path/to/pain.xsd', 'XSD for pain.001.001.03', '2023', 3),
-(4, 'MT940.xsd', 'urn:swift:xsd:mt940', '/path/to/MT940.xsd', 'XSD for MT940', '2023', 4),
-(5, 'MT950.xsd', 'urn:swift:xsd:mt950', '/path/to/MT950.xsd', 'XSD for MT950', '2023', 5),
-(6, 'MT101.xsd', 'urn:swift:xsd:mt101', '/path/to/MT101.xsd', 'XSD for MT101', '2023', 6),
-(7, 'MT200.xsd', 'urn:swift:xsd:mt200', '/path/to/MT200.xsd', 'XSD for MT200', '2023', 7),
-(8, 'camt.053.001.02.xsd', 'urn:swift:xsd:camt.053.001.02', '/path/to/camt.xsd', 'XSD for camt.053.001.02', '2023', 8),
-(9, 'MT540.xsd', 'urn:swift:xsd:mt540', '/path/to/MT540.xsd', 'XSD for MT540', '2023', 9),
-(10, 'MT542.xsd', 'urn:swift:xsd:mt542', '/path/to/MT542.xsd', 'XSD for MT542', '2023', 10);
+INSERT INTO User_Activity (User_id, Activity_id) VALUES (1, 1);
+INSERT INTO User_Activity (User_id, Activity_id) VALUES (2, 2);
+INSERT INTO User_Activity (User_id, Activity_id) VALUES (3, 3);
+INSERT INTO User_Activity (User_id, Activity_id) VALUES (4, 4);
+INSERT INTO User_Activity (User_id, Activity_id) VALUES (5, 5);
+INSERT INTO User_Activity (User_id, Activity_id) VALUES (6, 6);
+INSERT INTO User_Activity (User_id, Activity_id) VALUES (7, 7);
+INSERT INTO User_Activity (User_id, Activity_id) VALUES (8, 8);
+INSERT INTO User_Activity (User_id, Activity_id) VALUES (9, 9);
+INSERT INTO User_Activity (User_id, Activity_id) VALUES (10, 10);
+
+INSERT INTO System_Alert (id, SWIFT_System_Logs_id, Type, Timestamp, Resolved) VALUES (1, 1, 'Login Failure', TO_TIMESTAMP('2025-03-23 10:05:00', 'YYYY-MM-DD HH24:MI:SS'), 0);
+INSERT INTO System_Alert (id, SWIFT_System_Logs_id, Type, Timestamp, Resolved) VALUES (2, 2, 'Configuration Change', TO_TIMESTAMP('2025-03-23 10:10:00', 'YYYY-MM-DD HH24:MI:SS'), 1);
+INSERT INTO System_Alert (id, SWIFT_System_Logs_id, Type, Timestamp, Resolved) VALUES (3, 3, 'Database Error', TO_TIMESTAMP('2025-03-23 10:15:00', 'YYYY-MM-DD HH24:MI:SS'), 0);
+INSERT INTO System_Alert (id, SWIFT_System_Logs_id, Type, Timestamp, Resolved) VALUES (4, 4, 'File Transfer Failure', TO_TIMESTAMP('2025-03-23 10:20:00', 'YYYY-MM-DD HH24:MI:SS'), 1);
+INSERT INTO System_Alert (id, SWIFT_System_Logs_id, Type, Timestamp, Resolved) VALUES (5, 5, 'Security Alert', TO_TIMESTAMP('2025-03-23 10:25:00', 'YYYY-MM-DD HH24:MI:SS'), 0);
+INSERT INTO System_Alert (id, SWIFT_System_Logs_id, Type, Timestamp, Resolved) VALUES (6, 6, 'System Restart', TO_TIMESTAMP('2025-03-23 10:30:00', 'YYYY-MM-DD HH24:MI:SS'), 1);
+INSERT INTO System_Alert (id, SWIFT_System_Logs_id, Type, Timestamp, Resolved) VALUES (7, 7, 'Memory Usage High', TO_TIMESTAMP('2025-03-23 10:35:00', 'YYYY-MM-DD HH24:MI:SS'), 0);
+INSERT INTO System_Alert (id, SWIFT_System_Logs_id, Type, Timestamp, Resolved) VALUES (8, 8, 'Network Error', TO_TIMESTAMP('2025-03-23 10:40:00', 'YYYY-MM-DD HH24:MI:SS'), 1);
+INSERT INTO System_Alert (id, SWIFT_System_Logs_id, Type, Timestamp, Resolved) VALUES (9, 9, 'Disk Space Low', TO_TIMESTAMP('2025-03-23 10:45:00', 'YYYY-MM-DD HH24:MI:SS'), 0);
+INSERT INTO System_Alert (id, SWIFT_System_Logs_id, Type, Timestamp, Resolved) VALUES (10, 10, 'Timeout Alert', TO_TIMESTAMP('2025-03-23 10:50:00', 'YYYY-MM-DD HH24:MI:SS'), 1);
+
+INSERT INTO ReceiverBIC (BIC_Directory_BIC, SWIFT_Transactions_id) VALUES ('BANKGB2L', 1);
+INSERT INTO ReceiverBIC (BIC_Directory_BIC, SWIFT_Transactions_id) VALUES ('BANKFR1A', 2);
+INSERT INTO ReceiverBIC (BIC_Directory_BIC, SWIFT_Transactions_id) VALUES ('BANKDEFF', 3);
+INSERT INTO ReceiverBIC (BIC_Directory_BIC, SWIFT_Transactions_id) VALUES ('BANKJPJT', 4);
+INSERT INTO ReceiverBIC (BIC_Directory_BIC, SWIFT_Transactions_id) VALUES ('BANKCACT', 5);
+INSERT INTO ReceiverBIC (BIC_Directory_BIC, SWIFT_Transactions_id) VALUES ('BANKAUBB', 6);
+INSERT INTO ReceiverBIC (BIC_Directory_BIC, SWIFT_Transactions_id) VALUES ('BANKCHZZ', 7);
+INSERT INTO ReceiverBIC (BIC_Directory_BIC, SWIFT_Transactions_id) VALUES ('BANKCNBJ', 8);
+INSERT INTO ReceiverBIC (BIC_Directory_BIC, SWIFT_Transactions_id) VALUES ('BANKINBB', 9);
+INSERT INTO ReceiverBIC (BIC_Directory_BIC, SWIFT_Transactions_id) VALUES ('BANKUS33', 10);
+
+INSERT INTO SenderBIC (BIC_Directory_BIC, Transactions_id) VALUES ('BANKUS33', 1);
+INSERT INTO SenderBIC (BIC_Directory_BIC, Transactions_id) VALUES ('BANKGB2L', 2);
+INSERT INTO SenderBIC (BIC_Directory_BIC, Transactions_id) VALUES ('BANKFR1A', 3);
+INSERT INTO SenderBIC (BIC_Directory_BIC, Transactions_id) VALUES ('BANKDEFF', 4);
+INSERT INTO SenderBIC (BIC_Directory_BIC, Transactions_id) VALUES ('BANKJPJT', 5);
+INSERT INTO SenderBIC (BIC_Directory_BIC, Transactions_id) VALUES ('BANKCACT', 6);
+INSERT INTO SenderBIC (BIC_Directory_BIC, Transactions_id) VALUES ('BANKAUBB', 7);
+INSERT INTO SenderBIC (BIC_Directory_BIC, Transactions_id) VALUES ('BANKCHZZ', 8);
+INSERT INTO SenderBIC (BIC_Directory_BIC, Transactions_id) VALUES ('BANKCNBJ', 9);
+INSERT INTO SenderBIC (BIC_Directory_BIC, Transactions_id) VALUES ('BANKINBB', 10);
