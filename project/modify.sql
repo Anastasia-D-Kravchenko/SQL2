@@ -39,6 +39,10 @@ FROM
 WHERE
     a.Type = 'Security Breach' AND a.Resolved = 0;
 
+
+
+
+
 -- 4. SELECT statement that joins at least two tables and contains GROUP BY and HAVING clauses
 -- Find the number of transactions for each currency where the count is greater than 1.
 SELECT
@@ -81,6 +85,10 @@ GROUP BY
 HAVING
     COUNT(mvl.id) > 1;
 
+
+
+
+
 -- 7. SELECT statement with subquery
 -- Find all IBANs that are associated with the 'Barclays Bank'.
 SELECT
@@ -99,6 +107,10 @@ FROM
     "User" u
 WHERE
     u.id IN (SELECT User_id FROM User_Role_Access WHERE Access_Control_List_id = (SELECT id FROM Access_Control_List WHERE "Resource" = 'Account Access'));
+
+
+
+
 
 -- 9. SELECT statement with correlated subquery
 -- Find all transactions that have an amount greater than the average amount for their currency.
