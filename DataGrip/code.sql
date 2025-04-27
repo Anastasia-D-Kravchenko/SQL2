@@ -1,7 +1,7 @@
 -- Find all departments, employee names and employee numbers of their supervisors
 SELECT e.deptno, e.ename AS employee_name, e.empno AS employee_number, s.ename AS supervisor_name, s.empno AS supervisor_number
-FROM EMP e
-         LEFT JOIN EMP s ON e.mgr = s.empno;
+FROM EMP e, EMP s
+WHERE e.mgr = s.empno;
 
 -- Print all values from all columns from table EMP
 SELECT *
@@ -63,3 +63,9 @@ ORDER BY hiredate DESC;
 SELECT *
 FROM EMP
 ORDER BY deptno ASC, sal DESC;
+
+
+SELECT MGR, COUNT(EMPNO)
+FROM EMP
+GROUP BY MGR
+having count(EMPNO)>1;
